@@ -6,7 +6,7 @@
 
 Neovim is a powerful text editor that allows for extensive customization. This document provides an overview of the scaffolding for Neovim configuration, detailing the purpose and function of each part.
 
-# Config scafolding
+## Config scafolding
 
 
 Using a user module for Neovim configuration promotes a dedicated namespace, ensuring personal settings don't collide with default or third-party configurations. This approach enhances organization, readability, and update ease. By isolating custom configurations, users can mitigate errors, simplify sharing or porting settings, and maintain a clear distinction between personal and external configurations.
