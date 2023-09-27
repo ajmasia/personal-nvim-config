@@ -11,6 +11,7 @@ return {
         -- empty object use default config values
       },
     },
+    -- lspconfig available servers
     servers = {
       emmet_ls = { enable = true },
       html = { enable = true },

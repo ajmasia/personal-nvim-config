@@ -14,6 +14,7 @@ local expand_lsp_options = function (options)
 end
 
 return {
+  -- lsp_plugin_opts from plugin definition opts value
   setup = function(lsp_plugin_opts)
     local lspconfig = require "lspconfig"
     local user_lsp_options = require "user.config.default".lsp
@@ -52,17 +53,18 @@ return {
     if lsp_options.mason.enable == true then
       local mason = require "mason"
       local mason_lspconfig = require "mason-lspconfig"
+
+      local mason_options = lsp_options.mason.options
       local mason_lspconfig_options = {}
 
       if lsp_options.mason.auto_install == true then
         mason_lspconfig_options.ensure_installed = mason_servers
       end
 
-      mason.setup(lsp_options.mason.options)
+      mason.setup(mason_options)
       -- set mason-lspconfig using defined mason options
       mason_lspconfig.setup(mason_lspconfig_options)
     end
-
   end,
 }
 
