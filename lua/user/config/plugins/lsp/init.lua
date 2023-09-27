@@ -2,13 +2,13 @@ local lsp_tools = require "user.utils"
 
 local expand_lsp_options = function (options)
   -- import cmp-nvim-lsp plugin
-  -- local cmp_nvim_lsp = require("cmp_nvim_lsp")
+  local cmp_nvim_lsp = require("cmp_nvim_lsp")
   -- used to enable autocompletion (assign to every lsp server config)
-  -- local capabilities = cmp_nvim_lsp.default_capabilities()
+  local capabilities = cmp_nvim_lsp.default_capabilities()
 
   return vim.tbl_deep_extend("force", {
     on_attach = require "user.config.plugins.lsp.on_attach",
-    -- capabilities = capabilities,
+    capabilities = capabilities,
     -- flags = require "use.plugins.config.lsp.flags",
     }, options)
 end
