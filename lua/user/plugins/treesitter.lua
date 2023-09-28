@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
 	dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
 	},
@@ -22,6 +23,9 @@ return {
 			enable = true,
 		},
 		autotag = { enable = true },
+    context_commentstring = {
+      enable = true,
+    },
 		textobjects = {
 			select = {
 				enable = true,
