@@ -8,6 +8,11 @@ return function(_, buffer)
   opts.buffer = buffer
   opts.desc = "Show line diagnostics"
 
-  keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+  keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
+  keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP Code actions" })
+  keymap.set("n", "<leader>cf", function()
+    return vim.lsp.buf.format { async = true }
+  end, {desc = "LSP (null ls) Format file"})
+
 end
 

@@ -50,6 +50,8 @@ return {
       end
     end
 
+    require "user.config.plugins.lsp.null_ls"
+
     if lsp_options.mason.enable == true then
       local mason = require "mason"
       local mason_lspconfig = require "mason-lspconfig"

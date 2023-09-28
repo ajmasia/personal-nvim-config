@@ -24,6 +24,7 @@ return {
       rnix = { enable = true },
       tailwindcss = { enable = true },
       tsserver = { enable = true },
+      eslint = { enable = true },
     },
     diagnostics = {
       underline = true,
