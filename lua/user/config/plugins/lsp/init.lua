@@ -1,6 +1,6 @@
 local lsp_tools = require "user.utils"
 
-local expand_lsp_options = function (options)
+local expand_lsp_options = function(options)
   -- import cmp-nvim-lsp plugin
   local cmp_nvim_lsp = require("cmp_nvim_lsp")
   -- used to enable autocompletion (assign to every lsp server config)
@@ -10,7 +10,7 @@ local expand_lsp_options = function (options)
     on_attach = require "user.config.plugins.lsp.on_attach",
     capabilities = capabilities,
     -- flags = require "use.plugins.config.lsp.flags",
-    }, options)
+  }, options)
 end
 
 return {
@@ -54,6 +54,7 @@ return {
 
     if lsp_options.mason.enable == true then
       local mason = require "mason"
+      local mr = require("mason-registry")
       local mason_lspconfig = require "mason-lspconfig"
 
       local mason_options = lsp_options.mason.options
@@ -64,9 +65,24 @@ return {
       end
 
       mason.setup(mason_options)
+
+      local function ensure_installed()
+        for _, formatter in ipairs(user_lsp_options.formatters) do
+          local p = mr.get_package(formatter)
+          if not p:is_installed() then
+            p:install()
+          end
+        end
+      end
+
+      if mr.refresh then
+        mr.refresh(ensure_installed)
+      else
+        ensure_installed()
+      end
+
       -- set mason-lspconfig using defined mason options
       mason_lspconfig.setup(mason_lspconfig_options)
     end
   end,
 }
-
