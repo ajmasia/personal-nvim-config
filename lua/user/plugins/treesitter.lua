@@ -4,13 +4,14 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
 	},
+  enabled = true,
 	build = ":TSUpdate",
-	event = "VeryLazy",
 	main = "nvim-treesitter.configs",
+  event = { "BufReadPost", "BufNewFile" },
 	opts = {
-		ensure_installed = { 
-			"lua", "luadoc", "vim", "vimdoc", "query", "nix", "bash", 
-			"typescript", "javascript", "tsx", "html", "css", 
+		ensure_installed = {
+			"lua", "luadoc", "vim", "vimdoc", "query", "nix", "bash",
+			"typescript", "javascript", "tsx", "html", "css",
 			"json", "yaml",
 			"python",
 		},

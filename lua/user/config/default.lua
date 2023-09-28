@@ -1,4 +1,5 @@
 return {
+  theme = "tokyonight",
   lsp = {
     mason = {
       enable = true,

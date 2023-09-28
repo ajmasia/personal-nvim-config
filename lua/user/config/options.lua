@@ -7,6 +7,7 @@ vim.o.confirm = true 			-- confirm to save changes before exiting modified buffe
 vim.o.mouse = ""			-- disable de mouse mode
 vim.o.swapfile = false            	-- disble swap files
 vim.o.signcolumn = "yes:2"        	-- enable fixed sign column and specify width
+vim.o.termguicolors = true
 
 -- editor options
 vim.o.termguicolors = true        	-- true color support
