@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("User", {
   group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
   pattern = "VeryLazy",
   callback = function()
-    -- require "config.autocmds"
+    require "user.config.autocmds"
     -- require "config.usercmds"
     require "user.config.keymaps"
     require "user.config.diagnostic"

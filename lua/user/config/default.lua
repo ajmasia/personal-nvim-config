@@ -28,7 +28,8 @@ return {
       },
       servers_black_list = { "lua_ls" },
     },
-    -- lspconfig available servers
+    linters = {},
+    -- mason-lspconfig available servers
     servers = {
       astro = { enable = true },
       emmet_ls = { enable = true },

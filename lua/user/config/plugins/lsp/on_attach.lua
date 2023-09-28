@@ -13,6 +13,5 @@ return function(_, buffer)
   keymap.set("n", "<leader>cf", function()
     return vim.lsp.buf.format { async = true }
   end, {desc = "LSP (null ls) Format file"})
-
 end
 
