@@ -12,6 +12,7 @@ if type(diagnostics.virtual_text) == "table" and diagnostics.virtual_text.prefix
   ---@diagnostic disable-next-line: assign-type-mismatch
   diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
     or function(diagnostic)
+      -- TODO: check this when neovim 0.10 will be available
       for d, icon in pairs(icons) do
         if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
           return icon
