@@ -9,7 +9,7 @@ return {
     "onsails/lspkind.nvim",     -- vs-code like pictograms
   },
   config = function()
-    require "user.config.plugins.nvim-cmp"
+    require "user.config.plugins.nvim_cmp"
   end,
 }
 
