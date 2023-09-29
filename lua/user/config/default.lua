@@ -37,7 +37,7 @@ return {
       jsonls = { enable = true },
       lua_ls = { enable = true },
       rnix = { enable = true },
-      tailwindcss = { enable = true },
+      -- tailwindcss = { enable = true },
       tsserver = { enable = true },
       eslint = { enable = true },
     },
